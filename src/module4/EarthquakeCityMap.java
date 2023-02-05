@@ -21,8 +21,8 @@ import module4.CityMarker;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
+ * @author Cheng Ying Chen
+ * Date: February 05, 2023
  * */
 public class EarthquakeCityMap extends PApplet {
 	

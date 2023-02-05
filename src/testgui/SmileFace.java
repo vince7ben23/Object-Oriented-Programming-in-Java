@@ -1,8 +1,8 @@
-package mypackagegui;
+package testgui;
 
 import processing.core.PApplet;
 
-public class MyDisplay extends PApplet {
+public class SmileFace extends PApplet {
 	public void setup() {
 		size(600, 600);
 		background(230);

@@ -22,9 +22,9 @@ import processing.core.PApplet;
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
  * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
- * */
+ * @author Cheng Ying Chen
+ * Date: February 05, 2023
+ **/
 public class EarthquakeCityMap extends PApplet {
 	
 	// We will use member variables, instead of local variables, to store the data
@@ -62,11 +62,11 @@ public class EarthquakeCityMap extends PApplet {
 	// A List of country markers
 	private List<Marker> countryMarkers;
 	
-	// NEW IN MODULE 5
+	// To record the marker is selected or clicked 
 	private CommonMarker lastSelected;
 	private CommonMarker lastClicked;
 	
-	//City Info
+	//Control weather show earthquake info for a city which is clicked 
 	private boolean flagCityInfo = false;
 	
 	public void setup() {		
@@ -141,16 +141,13 @@ public class EarthquakeCityMap extends PApplet {
 			int numQuake = getNearbyEarthquakes(lastClicked);
 			float avgMagnitude = getAvgMagnitude(lastClicked);
 			String mostNearbyQuake = getMostNearbyQuake(lastClicked);
-			addCityInfo(numQuake, avgMagnitude, mostNearbyQuake);
+			addEarthquakeDetailInfo(numQuake, avgMagnitude, mostNearbyQuake);
 		}
 		
 	}
 	
-	
-	// TODO: Add the method:
+	// implement 1
 	private void sortAndPrint(int numToPrint) {
-		// implement 1
-		
 		List<EarthquakeMarker> qms = new ArrayList<EarthquakeMarker>();
 		for (Marker m : quakeMarkers) {
 			qms.add((EarthquakeMarker) m);
@@ -165,8 +162,8 @@ public class EarthquakeCityMap extends PApplet {
 		}
 	}
 	
+	// implement 2
 	private void sortAndPrint2(int numToPrint) {
-		// implement 2
 		Collections.sort(quakeMarkers, Collections.reverseOrder());
 		int current = 0;
 		for (Marker m : quakeMarkers) {
@@ -411,7 +408,7 @@ public class EarthquakeCityMap extends PApplet {
 		
 	}
 	
-	private void addCityInfo(int numQuake, float avgMagnitude, String mostNearbyQuake) {
+	private void addEarthquakeDetailInfo(int numQuake, float avgMagnitude, String mostNearbyQuake) {
 		fill(255, 250, 240);
 		int xbase = 25;
 		int ybase = 350;

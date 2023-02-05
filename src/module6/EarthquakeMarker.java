@@ -57,7 +57,6 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	
 	// TODO: Add the method:
 	public int compareTo(EarthquakeMarker marker) {
-		// return int
 		if (this.getMagnitude() > marker.getMagnitude()) {
 			return 1;
 		}
